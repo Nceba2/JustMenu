@@ -14,7 +14,7 @@
 }
 
 .raw{
-    border: 1px solid black;
+    border: 2px solid black;
     margin: 2px;
     padding: 2px;
 }
@@ -53,4 +53,8 @@
     border-radius: .25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 
+}
+.MenuTable tr th{
+background-color: #e8dd16d6;
+border:2px solid #090909;
 }

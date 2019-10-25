@@ -1,0 +1,87 @@
+{
+  "products" : {
+    "others" : [
+      {
+        "name" : "Small chips",
+        "description" : "With cheese source, tomato source",
+        "price" : 5
+      },
+      {
+        "name" : "lage chips",
+        "description" : "With cheese source, tomato source",
+        "price" : 10
+      },
+      {
+        "name" : "fat cakes",
+        "description" : "per fat cake",
+        "price" : 1
+      }
+    ],
+    "drinks" : [
+      {
+        "name" : "Sprite",
+        "description" : "can",
+        "price" : 20
+      },
+      {
+        "name" : "Coca-Cola",
+        "description" : "2l bottle",
+        "price" : 20
+      },
+      {
+        "name" : "Water",
+        "description" : "1/2l bottle",
+        "price" : 10
+      }
+    ],
+    "kota" : [
+      {
+        "name" : "Regular Kota",
+        "description" : "Special, chips, achar, sources",
+        "price" : 10
+      },
+      {
+        "name" : "Regular part2",
+        "description" : "Special, chips, achar, sources, russian",
+        "price" : 10
+      },
+      {
+        "name" : "Regular cheese",
+        "description" : "Special, chips, achar, sources, veana, cheese",
+        "price" : 12
+      },
+      {
+        "name" : "Burger Bomb",
+        "description" : "Burger, chips, sources, cheese",
+        "price" : 21
+      },
+      {
+        "name" : "Mince",
+        "description" : "Mash Potato, Mince, sources",
+        "price" : 17
+      },
+      {
+        "name" : "Chicken bus",
+        "description" : "Chicken Mayo Salad, chips, achar, cheese",
+        "price" : 50
+      },
+      {
+        "name" : "Godzilla",
+        "description" : "2 Burgers, cheese, chips, achar, sources, lattice",
+        "price" : 70
+      },
+      {
+        "name" : "Spicy Godzilla",
+        "description" : "",
+        "price" : 100
+      }
+    ],
+    "testproducts" : [
+      {
+        "name" : "test item",
+        "description" : "test description",
+        "price" : 200
+      }
+    ]
+  }
+}
