@@ -1,3 +1,6 @@
-/Users/nceba/IdeaProjects/JustMenu/src/main/java/ProductDataFilter.java
+/Users/nceba/IdeaProjects/JustMenu/src/main/java/Model/IDataModel.java
+/Users/nceba/IdeaProjects/JustMenu/src/main/java/Model/ProductModel.java
+/Users/nceba/IdeaProjects/JustMenu/src/main/java/Model/IProductModel.java
 /Users/nceba/IdeaProjects/JustMenu/src/main/java/JustMenu.java
-/Users/nceba/IdeaProjects/JustMenu/src/main/java/JsonFileReader.java
+/Users/nceba/IdeaProjects/JustMenu/src/main/java/Model/JsonFileReader.java
+/Users/nceba/IdeaProjects/JustMenu/src/main/java/Model/DataModel.java

@@ -1,2 +1,3 @@
-IProductDataFilter.class
+Model/DataModel.class
 JustMenu.class
+Model/IDataModel.class

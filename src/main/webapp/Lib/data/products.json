@@ -41,22 +41,22 @@
         "price" : 10
       },
       {
-        "name" : "Regular part2",
+        "name" : "Regular part2 Kota",
         "description" : "Special, chips, achar, sources, russian",
         "price" : 10
       },
       {
-        "name" : "Regular cheese",
+        "name" : "Regular cheese Kota",
         "description" : "Special, chips, achar, sources, veana, cheese",
         "price" : 12
       },
       {
-        "name" : "Burger Bomb",
+        "name" : "Burger Bomb Kota",
         "description" : "Burger, chips, sources, cheese",
         "price" : 21
       },
       {
-        "name" : "Mince",
+        "name" : "Mince Kota",
         "description" : "Mash Potato, Mince, sources",
         "price" : 17
       },
@@ -66,12 +66,12 @@
         "price" : 50
       },
       {
-        "name" : "Godzilla",
+        "name" : "Godzilla Kota",
         "description" : "2 Burgers, cheese, chips, achar, sources, lattice",
         "price" : 70
       },
       {
-        "name" : "Spicy Godzilla",
+        "name" : "Spicy Godzilla Kota",
         "description" : "",
         "price" : 100
       }

@@ -18,8 +18,10 @@
         <link href="Lib/fonts/ionicons.css" rel="stylesheet">
         <link href="Lib/common/styles.css" rel="stylesheet">
 
+        <script src="Lib/js/angular.min.js"></script>
+
 </head>
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
 
 <header>
         <div class="container">
@@ -53,10 +55,14 @@
                                 <h5><b>BEST IN TOWN</b></h5>
                                 <h1 class="mt-30 mb-15" ><u>Kota King</u></h1>
 
-                                <p>${Kotas}</p><br/>
-                                <p>${Drinks}</p><br/>
-                                <p>${Others}</p><br/>
-
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+    $scope.kotas = ${Kotas};
+    $scope.drinks = ${Drinks};
+    $scope.others = ${Others};
+});
+</script>
                                 <!-- <h5><a href="#" class="btn-primaryc plr-25"><b>SEE TODAYS MENU</b></a></h5> -->
                         </div><!-- dplay-tbl-cell -->
                 </div><!-- dplay-tbl -->
@@ -74,93 +80,44 @@
                         <div class="col-sm-12">
                                 <ul class="selecton brdr-b-primary mb-70">
                                         <li><a class="active" href="#" data-select="*"><b>ALL</b></a></li>
-                                        <li><a href="#" data-select="pizza"><b>PIZZA</b></a></li>
-                                        <li><a href="#" data-select="pasta"><b>PASTA</b></a></li>
-                                        <li><a href="#" data-select="salads"><b>SALADS</b></a></li>
-                                        <li><a href="#" data-select="deserts"><b>DESERTS</b></a></li>
+                                        <li><a href="#" data-select="kotas"><b>KOTAS</b></a></li>
+                                        <li><a href="#" data-select="drinks"><b>DRINKS</b></a></li>
+                                        <li><a href="#" data-select="others"><b>OTHERS</b></a></li>
                                 </ul>
                         </div><!--col-sm-12-->
                 </div><!--row-->
 
                 <div class="row">
-                        <div class="col-md-6 food-menu pizza">
+                        <div class="col-md-6 food-menu kotas" ng-repeat="k in kotas">
                                 <div class="sided-90x mb-30 ">
                                         <div class="s-left"><img class="br-3" src="Lib/img/menu-1-120x120.jpg" alt="Menu Image"></div><!--s-left-->
                                         <div class="s-right">
-                                                <h5 class="mb-10"><b>Pizza Margherita</b><b class="color-primary float-right">$12.00</b></h5>
+                                                <h5 class="mb-10"><b>{{k.name}}</b><b class="color-primary float-right">R {{k.price}}</b></h5>
                                                 <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
                                         </div><!--s-right-->
                                 </div><!-- sided-90x -->
                         </div><!-- food-menu -->
 
-                        <div class="col-md-6 food-menu pizza pasta">
+                        <div class="col-md-6 food-menu drinks"  ng-repeat="d in drinks">
                                 <div class="sided-90x mb-30 ">
                                         <div class="s-left"><img class="br-3" src="Lib/img/menu-2-120x120.jpg" alt="Menu Image"></div><!--s-left-->
                                         <div class="s-right">
-                                                <h5 class="mb-10"><b>Italian pasta</b><b class="color-primary float-right">$20.00</b></h5>
+                                                <h5 class="mb-10"><b>{{d.name}}</b><b class="color-primary float-right">R {{d.price}}</b></h5>
                                                 <p class="pr-70">Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis. </p>
                                         </div><!--s-right-->
                                 </div><!-- sided-90x -->
                         </div><!-- food-menu -->
 
-                        <div class="col-md-6 food-menu pasta">
+                        <div class="col-md-6 food-menu others"  ng-repeat="o in others">
                                 <div class="sided-90x mb-30 ">
                                         <div class="s-left"><img class="br-3" src="Lib/img/menu-3-120x120.jpg" alt="Menu Image"></div><!--s-left-->
                                         <div class="s-right">
-                                                <h5 class="mb-10"><b>Pizza Prosciuto</b><b class="color-primary float-right">$12.00</b></h5>
+                                                <h5 class="mb-10"><b>{{o.name}}</b><b class="color-primary float-right">R {{o.price}}</b></h5>
                                                 <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
                                         </div><!--s-right-->
                                 </div><!-- sided-90x -->
                         </div><!-- food-menu -->
 
-                        <div class="col-md-6 food-menu salads">
-                                <div class="sided-90x mb-30">
-                                        <div class="s-left"><img class="br-3" src="Lib/img/menu-4-120x120.jpg" alt="Menu Image"></div><!--s-left-->
-                                        <div class="s-right">
-                                                <h5 class="mb-10"><b>Broschettas</b><b class="color-primary float-right">$6.00</b></h5>
-                                                <p class="pr-70">Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis. </p>
-                                        </div><!--s-right-->
-                                </div><!-- sided-90x -->
-                        </div><!-- food-menu -->
-                        <div class="col-md-6 food-menu deserts">
-                                <div class="sided-90x mb-30">
-                                        <div class="s-left"><img class="br-3" src="Lib/img/menu-5-120x120.jpg" alt="Menu Image"></div><!--s-left-->
-                                        <div class="s-right">
-                                                <h5 class="mb-10"><b>Pizza Margherita</b><b class="color-primary float-right">$12.00</b></h5>
-                                                <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
-                                        </div><!--s-right-->
-                                </div><!-- sided-90x -->
-                        </div><!-- food-menu -->
-
-                        <div class="col-md-6 food-menu pizza">
-                                <div class="sided-90x mb-30 ">
-                                        <div class="s-left"><img class="br-3" src="Lib/img/menu-6-120x120.jpg" alt="Menu Image"></div><!--s-left-->
-                                        <div class="s-right">
-                                                <h5 class="mb-10"><b>Italian pasta</b><b class="color-primary float-right">$20.00</b></h5>
-                                                <p class="pr-70">Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis. </p>
-                                        </div><!--s-right-->
-                                </div><!-- sided-90x -->
-                        </div><!-- food-menu -->
-
-                        <div class="col-md-6 food-menu deserts">
-                                <div class="sided-90x mb-30">
-                                        <div class="s-left"><img class="br-3" src="Lib/img/menu-7-120x120.jpg"  alt="Menu Image"></div><!--s-left-->
-                                        <div class="s-right">
-                                                <h5 class="mb-10"><b>Pizza Prosciuto</b><b class="color-primary float-right">$12.00</b></h5>
-                                                <p class="pr-70">Maecenas fermentum tortor id fringilla  molestie. In hac habitasse platea dictumst. </p>
-                                        </div><!--s-right-->
-                                </div><!-- sided-90x -->
-                        </div><!-- food-menu -->
-
-                        <div class="col-md-6 food-menu pasta">
-                                <div class="sided-90x mb-30 ">
-                                        <div class="s-left"><img class="br-3" src="Lib/img/menu-8-120x120.jpg" alt="Menu Image"></div><!--s-left-->
-                                        <div class="s-right">
-                                                <h5 class="mb-10"><b>Broschettas</b><b class="color-primary float-right">$6.00</b></h5>
-                                                <p class="pr-70">Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis. </p>
-                                        </div><!--s-right-->
-                                </div><!-- sided-90x -->
-                        </div><!-- food-menu -->
                 </div><!-- row -->
 
                 <!-- <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="#" class="btn-primaryc plr-25"><b>SEE TODAYS MENU</b></a></h6> -->
@@ -279,7 +236,7 @@
                 </ul>
 
                 <p class="color-light font-9 mt-50 mt-sm-30"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Nceba Sobikwa</a>
+Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Nceba Sobikwa</a>
         </div><!-- container -->
 </footer>
 
