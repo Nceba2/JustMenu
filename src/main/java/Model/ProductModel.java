@@ -2,9 +2,6 @@ package Model;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.ParseException;
-
-import java.io.IOException;
 
 public class ProductModel implements IProductModel {
     DataModel dataModel;

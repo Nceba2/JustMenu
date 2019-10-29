@@ -1,9 +1,7 @@
-import Model.IProductModel;
-import Model.JsonFileReader;
-import Model.DataModel;
-import Model.ProductModel;
+import Model.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,7 +13,7 @@ import java.net.URL;
 
 import static org.junit.Assert.*;
 
-public class JustMenuTests {
+public class JustMenuControllerTests {
 
     private URL url;
     private String file,file2;
@@ -185,6 +183,85 @@ public class JustMenuTests {
     }
     //use arrays global to display and process
     //add items to order[] using array --set & get methods
+    @Test
+    public void Order_addToCart_test() throws ParseException {
+        //get product list
+        String data="[{\"price\":200,\"name\":\"test item\",\"description\":\"test description\"}]";
+        JSONParser jsonParser = new JSONParser();
+        JSONArray productsArray =  (JSONArray) jsonParser.parse(data);//choose a product set example pizzas or kota's
+
+        //select an item from products
+        JSONObject product = (JSONObject) productsArray.get(0);//0 is index moving around each product
+
+        //and add to cart
+        ICartModel cartModel = new CartModel();
+        cartModel.addToCart(product);
+
+        //assert cart temp storage is not null
+        assertEquals(product,cartModel.getProduct().get(0));
+    }
+    @Test
+    public void Order_addToCart_null_test(){
+        //and add to cart
+        ICartModel cartModel = new CartModel();
+        cartModel.addToCart(null);
+
+        //assert cart temp storage is not null
+        assertEquals(null,cartModel.getProduct().get(0));
+    }
+    @Test
+    public void Order_addToCart_FalseValue_test() throws ParseException {
+        String data="[{\"price\":200,\"name\":\"test item\",\"description\":\"test description\"}]";
+        String falseData="[{\"falseValue\":\"false\"}]";
+
+        JSONParser jsonParser = new JSONParser();
+        JSONArray falseArray =  (JSONArray) jsonParser.parse(falseData);
+        JSONArray productsArray =  (JSONArray) jsonParser.parse(data);//choose a product set example pizzas or kota's
+
+        //select an item from products
+        JSONObject product = (JSONObject) productsArray.get(0);//0 is index moving around each product
+
+        //and add to cart
+        ICartModel cartModel = new CartModel();
+        cartModel.addToCart((JSONObject) falseArray.get(0));
+
+        //assert cart temp storage is not null
+        assertNotEquals(product,cartModel.getProduct().get(0));
+    }
+    @Test
+    public void Order_addToCart_EmptyJSONObject_test() throws ParseException {
+        String data="[{\"price\":200,\"name\":\"test item\",\"description\":\"test description\"}]";
+        String EmptyJsonData="[{}]";
+
+        JSONParser jsonParser = new JSONParser();
+        JSONArray EmptyJsonArray =  (JSONArray) jsonParser.parse(EmptyJsonData);
+        JSONArray productsArray =  (JSONArray) jsonParser.parse(data);//choose a product set example pizzas or kota's
+
+        //select an item from products
+        JSONObject product = (JSONObject) productsArray.get(0);//0 is index moving around each product
+
+        //and add to cart
+        ICartModel cartModel = new CartModel();
+        cartModel.addToCart((JSONObject) EmptyJsonArray.get(0));
+
+        //assert cart temp storage is not null
+        assertNotEquals(product,cartModel.getProduct().get(0));
+    }
+    @Test
+    public void Order_addToCart_EmptyJSONObject_returnValue_test() throws ParseException {
+        String EmptyJsonData="[{}]";//what goes in must come out same
+
+        JSONParser jsonParser = new JSONParser();
+        JSONArray EmptyJsonArray =  (JSONArray) jsonParser.parse(EmptyJsonData);
+
+        //and add to cart
+        ICartModel cartModel = new CartModel();
+        cartModel.addToCart((JSONObject) EmptyJsonArray.get(0));
+
+        //assert cart temp storage is not null
+        assertEquals(EmptyJsonArray,cartModel.getProduct());
+    }
+
     //add order[prices] to total[] incrementing while loop --set & get methods
     //use order[] and total[] to display bill
 }

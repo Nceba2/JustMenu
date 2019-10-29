@@ -6,7 +6,7 @@
 
     <servlet>
       <servlet-name>justmenu</servlet-name>
-      <servlet-class>JustMenu</servlet-class>
+      <servlet-class>Controller/Controller.JustMenuController</servlet-class>
     </servlet>
 
     <welcome-file-list>

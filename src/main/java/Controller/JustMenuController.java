@@ -1,8 +1,8 @@
+package Controller;
 
 import Model.IProductModel;
 import Model.ProductModel;
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/justmenu")
-public class JustMenu extends HttpServlet {
+public class JustMenuController extends HttpServlet {
     private JSONArray _kotas,_drinks,_others;
     private String file2;
     private JSONArray products;
