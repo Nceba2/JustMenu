@@ -18,6 +18,18 @@
         <link href="Lib/fonts/ionicons.css" rel="stylesheet">
         <link href="Lib/common/styles.css" rel="stylesheet">
 
+<style>
+.footerx {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+</style>
+
         <script src="Lib/js/angular.min.js"></script>
 
 </head>
@@ -34,9 +46,9 @@
                 <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
 
                 <ul class="main-menu font-mountainsre" id="main-menu">
-                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="?pager=index">HOME</a></li>
                         <li><a href="02_about_us.html">ABOUT US</a></li>
-                        <li><a href="03_menu.html">SERVICES</a></li>
+                        <li><a href="?pager=Cart">Cart</a></li>
                         <li><a href="04_blog.html">NEWS</a></li>
                         <li><a href="05_contact.html">CONTACT</a></li>
                 </ul>
@@ -61,6 +73,8 @@ app.controller("myCtrl", function($scope) {
     $scope.kotas = ${Kotas};
     $scope.drinks = ${Drinks};
     $scope.others = ${Others};
+
+    console.log("kotas :" + $scope.kotas);
 });
 </script>
                                 <!-- <h5><a href="#" class="btn-primaryc plr-25"><b>SEE TODAYS MENU</b></a></h5> -->
@@ -68,6 +82,8 @@ app.controller("myCtrl", function($scope) {
                 </div><!-- dplay-tbl -->
         </div><!-- container -->
 </section>
+
+<form action="OrderController" method="post">
 
 <section>
         <div class="container">
@@ -90,9 +106,12 @@ app.controller("myCtrl", function($scope) {
                 <div class="row">
                         <div class="col-md-6 food-menu kotas" ng-repeat="k in kotas">
                                 <div class="sided-90x mb-30 ">
-                                        <div class="s-left"><img class="br-3" src="Lib/img/menu-1-120x120.jpg" alt="Menu Image"></div><!--s-left-->
+                                        <div class="s-left">
+                                            <img class="br-3" src="Lib/img/menu-1-120x120.jpg" alt="Menu Image">
+                                        </div><!--s-left-->
                                         <div class="s-right">
                                                 <h5 class="mb-10"><b>{{k.name}}</b><b class="color-primary float-right">R {{k.price}}</b></h5>
+                                            <input type="checkbox" name="kota{{k.id}}" value={{k.id}} style="height: 40px;width: 40px;">
                                                 <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
                                         </div><!--s-right-->
                                 </div><!-- sided-90x -->
@@ -100,9 +119,12 @@ app.controller("myCtrl", function($scope) {
 
                         <div class="col-md-6 food-menu drinks"  ng-repeat="d in drinks">
                                 <div class="sided-90x mb-30 ">
-                                        <div class="s-left"><img class="br-3" src="Lib/img/menu-2-120x120.jpg" alt="Menu Image"></div><!--s-left-->
+                                        <div class="s-left">
+                                            <img class="br-3" src="Lib/img/menu-2-120x120.jpg" alt="Menu Image">
+                                        </div><!--s-left-->
                                         <div class="s-right">
                                                 <h5 class="mb-10"><b>{{d.name}}</b><b class="color-primary float-right">R {{d.price}}</b></h5>
+                                            <input type="checkbox" name="drink{{d.id}}" value={{d.id}} style="height: 40px;width: 40px;">
                                                 <p class="pr-70">Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis. </p>
                                         </div><!--s-right-->
                                 </div><!-- sided-90x -->
@@ -110,20 +132,24 @@ app.controller("myCtrl", function($scope) {
 
                         <div class="col-md-6 food-menu others"  ng-repeat="o in others">
                                 <div class="sided-90x mb-30 ">
-                                        <div class="s-left"><img class="br-3" src="Lib/img/menu-3-120x120.jpg" alt="Menu Image"></div><!--s-left-->
+                                        <div class="s-left">
+                                            <img class="br-3" src="Lib/img/menu-3-120x120.jpg" alt="Menu Image">
+                                        </div><!--s-left-->
                                         <div class="s-right">
                                                 <h5 class="mb-10"><b>{{o.name}}</b><b class="color-primary float-right">R {{o.price}}</b></h5>
+                                            <input type="checkbox" name="other{{o.id}}" value={{o.id}} style="height: 40px;width: 40px;">
                                                 <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
                                         </div><!--s-right-->
                                 </div><!-- sided-90x -->
                         </div><!-- food-menu -->
+
+
 
                 </div><!-- row -->
 
                 <!-- <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="#" class="btn-primaryc plr-25"><b>SEE TODAYS MENU</b></a></h6> -->
         </div><!-- container -->
 </section>
-
 
 <section class="story-area bg-seller color-white pos-relative">
         <div class="pos-bottom triangle-up"></div>
@@ -172,6 +198,22 @@ app.controller("myCtrl", function($scope) {
 </section>
 
 
+<div class="footerx center-sm-text pos-relative">
+     <br/>
+     <div class="row">
+          <div class="col-md-6 food-menu others">
+                <input type="hidden" value="Nceba" name="user" />
+                <input type="submit" value="Complete Order" class="btn-brdr-primary plr-25" />
+          </div>
+           <div class="col-md-6 food-menu others">
+                <input type="cancel" value="Cancel" class="btn-brdr-primary plr-25" />
+          </div>
+     </div>
+     <br/>
+</div>
+
+</form>
+
 <section class="story-area left-text center-sm-text pos-relative">
         <div class="abs-tbl bg-2 w-20 z--1 dplay-md-none"></div>
         <div class="abs-tbr bg-3 w-20 z--1 dplay-md-none"></div>
@@ -206,24 +248,25 @@ app.controller("myCtrl", function($scope) {
         </div><!-- container -->
 </section>
 
-<footer class="pb-50  pt-70 pos-relative">
+
+<footer class="story-area pb-50  pt-70 pos-absolute">
         <div class="pos-top triangle-bottom"></div>
         <div class="container-fluid">
                 <a href="index.html"><img src="Lib/img/logo-white.png" alt="Logo"></a>
 
                 <div class="pt-30">
                         <p class="underline-secondary"><b>Address:</b></p>
-                        <p>481 Creekside Lane Avila Beach, CA 93424 </p>
+                        <p>2410 Swan Rd , Riverlea, Ext 3</p>
                 </div>
 
                 <div class="pt-30">
                         <p class="underline-secondary mb-10"><b>Phone:</b></p>
-                        <a href="tel:+53 345 7953 32453 ">+53 345 7953 32453 </a>
+                        <a href="tel:+27 81 320 3500 ">+27 81 320 3500</a>
                 </div>
 
                 <div class="pt-30">
                         <p class="underline-secondary mb-10"><b>Email:</b></p>
-                        <a href="mailto:yourmail@gmail.com"> yourmail@gmail.com</a>
+                        <a href="mailto:yourmail@gmail.com"> Ncebsobikwa1@hotmail.com</a>
                 </div>
 
                 <ul class="icon mt-30">

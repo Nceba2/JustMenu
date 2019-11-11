@@ -9,7 +9,13 @@
       <servlet-class>Controller/Controller.JustMenuController</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>OrderController</servlet-name>
+        <servlet-class>Controller/Controller.OrderController</servlet-class>
+    </servlet>
+
     <welcome-file-list>
         <welcome-file>justmenu</welcome-file>
     </welcome-file-list>
+
 </web-app>

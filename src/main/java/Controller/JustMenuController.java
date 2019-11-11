@@ -13,12 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/justmenu")
 public class JustMenuController extends HttpServlet {
-    private JSONArray _kotas,_drinks,_others;
+    private JSONArray _kotas, _drinks, _others;
     private String file2;
-    private JSONArray products;
+    private String pager;
 
-    protected void doGet(HttpServletRequest request,HttpServletResponse response) throws  ServletException, IOException
-    {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         file2 = "src/main/webapp/Lib/data/products.json";
 
         IProductModel productModel = new ProductModel();
@@ -28,11 +27,16 @@ public class JustMenuController extends HttpServlet {
         _drinks = productModel.getProductSet("drinks");
         _others = productModel.getProductSet("others");
 
-        request.setAttribute("Kotas",_kotas);
-        request.setAttribute("Drinks",_drinks);
-        request.setAttribute("Others",_others);
+        request.setAttribute("Kotas", _kotas);
+        request.setAttribute("Drinks", _drinks);
+        request.setAttribute("Others", _others);
+
+        if (request.getParameter("pager") != null)
+            pager = request.getParameter("pager");
+        else
+            pager = "index";
 
         /** The following line can be used to call a .JSP file to provide the view **/
-        request.getRequestDispatcher("/views/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/" + pager + ".jsp").forward(request, response);
     }
 }

@@ -4,83 +4,112 @@
       {
         "name" : "Small chips",
         "description" : "With cheese source, tomato source",
-        "price" : 5
+        "price" : 5,
+        "image" : "",
+        "id" : 0
       },
       {
         "name" : "lage chips",
         "description" : "With cheese source, tomato source",
-        "price" : 10
+        "price" : 10,
+        "image" : "",
+        "id" : 1
       },
       {
         "name" : "fat cakes",
         "description" : "per fat cake",
-        "price" : 1
+        "price" : 1,
+        "image" : "",
+        "id" : 2
       }
     ],
     "drinks" : [
       {
         "name" : "Sprite",
         "description" : "can",
-        "price" : 20
+        "price" : 20,
+        "image" : "",
+        "id" : 0
       },
       {
         "name" : "Coca-Cola",
         "description" : "2l bottle",
-        "price" : 20
+        "price" : 20,
+        "image" : "",
+        "id" : 1
       },
       {
         "name" : "Water",
         "description" : "1/2l bottle",
-        "price" : 10
+        "price" : 10,
+        "image" : "",
+        "id" : 2
       }
     ],
     "kota" : [
       {
         "name" : "Regular Kota",
         "description" : "Special, chips, achar, sources",
-        "price" : 10
+        "price" : 10,
+        "image" : "",
+        "id" : 0
       },
       {
         "name" : "Regular part2 Kota",
         "description" : "Special, chips, achar, sources, russian",
-        "price" : 10
+        "price" : 10,
+        "image" : "",
+        "id" : 1
       },
       {
         "name" : "Regular cheese Kota",
         "description" : "Special, chips, achar, sources, veana, cheese",
-        "price" : 12
+        "price" : 12,
+        "image" : "",
+        "id" : 2
       },
       {
         "name" : "Burger Bomb Kota",
         "description" : "Burger, chips, sources, cheese",
-        "price" : 21
+        "price" : 21,
+        "image" : "",
+        "id" : 3
       },
       {
         "name" : "Mince Kota",
         "description" : "Mash Potato, Mince, sources",
-        "price" : 17
+        "price" : 17,
+        "image" : "",
+        "id" : 5
       },
       {
         "name" : "Chicken bus",
         "description" : "Chicken Mayo Salad, chips, achar, cheese",
-        "price" : 50
+        "price" : 50,
+        "image" : "",
+        "id" : 5
       },
       {
         "name" : "Godzilla Kota",
         "description" : "2 Burgers, cheese, chips, achar, sources, lattice",
-        "price" : 70
+        "price" : 70,
+        "image" : "",
+        "id" : 6
       },
       {
         "name" : "Spicy Godzilla Kota",
         "description" : "",
-        "price" : 100
+        "price" : 100,
+        "image" : ""
       }
     ],
     "testproducts" : [
       {
         "name" : "test item",
         "description" : "test description",
-        "price" : 200
+        "price" : 200,
+        "image" : "",
+        "id" : 0
       }
     ]
   }
