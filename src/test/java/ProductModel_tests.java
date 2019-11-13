@@ -127,6 +127,11 @@ public class ProductModel_tests {
     @Test
     public void ProductModel_getname_test()
     {
+        /**
+         * testing for a product to be added to a session attribute
+         * the session attribute is the client's cart
+         * the test is for retrieving name from selected product
+         */
         IProductModel productModel = new ProductModel();
         productModel.setProductSet(file2);
         String proName = productModel.getProduct("name","k",0);//choose a product set example pizzas or kota's
@@ -138,11 +143,17 @@ public class ProductModel_tests {
     @Test
     public void ProductModel_getPrice_test()
     {
+        /**
+         * testing for a product to be added to a session attribute
+         * the session attribute is the client's cart
+         * the test is for retrieving price from selected product
+         */
         IProductModel productModel = new ProductModel();
         productModel.setProductSet(file2);
-        String proName = productModel.getProduct("price","k",0);//choose a product set example pizzas or kota's
+        String proName = productModel.getProduct("price","k",0);//a product is set to be added to a cart
 
         System.out.println(proName);
         assertNotNull(proName);
     }
+
 }

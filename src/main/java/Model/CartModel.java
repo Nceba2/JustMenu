@@ -43,6 +43,7 @@ public class CartModel implements ICartModel {
             session = request.getSession();
             session.setAttribute("cartSessionArray", cartArray);
             session.setAttribute("cartSessionArrayPrices", cartKeys);
+            session.setAttribute("cartSessionArrayTotalPrice", totalPrice);
         }catch (Exception e){
             System.out.println(e);
         }
@@ -57,7 +58,8 @@ public class CartModel implements ICartModel {
     }
 
     public int getTotalPrice(){
-        return totalPrice;
+        totalPrice = 0;
+        return (int) session.getAttribute("cartSessionArrayTotalPrice");
     }
 
 }

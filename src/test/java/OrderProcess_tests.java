@@ -39,7 +39,10 @@ public class OrderProcess_tests {
          testJsonArray.put("test","test");
 
          request = Mockito.mock(HttpServletRequest.class);
-         request.setAttribute("test","test");
+         when(request.getHeader("principal")).thenReturn("abcd");
+         when(request.getHeader("authorization")).thenReturn("authtoken");
+         when(request.getRequestURI()).thenReturn("abcd-tt/api/v1/softwaremanagement");
+         //request.setAttribute("test","test");
 
          //test map
          Map m = request.getParameterMap();

@@ -32,26 +32,26 @@ public class ProductModel implements IProductModel {
 
     @Override
     public String getProduct(String attribute, String productset, int id) {
-        //method must return name of product
+        //method must return name or price, or any of the product's columns
 
-       JSONObject name;
+       JSONObject _product;
         try{
             switch (productset) {
                 case "k":
                     products = "kota";
                     productsArry = (JSONArray) product.get(products);
-                    name = (JSONObject) productsArry.get(id);
-                    return String.valueOf(name.get(attribute));
+                    _product = (JSONObject) productsArry.get(id);
+                    return String.valueOf(_product.get(attribute));
                 case "d":
                     products = "drinks";
                     productsArry = (JSONArray) product.get(products);
-                    name = (JSONObject) productsArry.get(id);
-                    return String.valueOf(name.get(attribute));
+                    _product = (JSONObject) productsArry.get(id);
+                    return String.valueOf(_product.get(attribute));
                 case "o":
                     products = "others";
                     productsArry = (JSONArray) product.get(products);
-                    name = (JSONObject) productsArry.get(id);
-                    return String.valueOf(name.get(attribute));
+                    _product = (JSONObject) productsArry.get(id);
+                    return String.valueOf(_product.get(attribute));
                 default:
                     return null;
             }

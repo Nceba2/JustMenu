@@ -19,7 +19,6 @@
         <link href="Lib/common/styles.css" rel="stylesheet">
 
         <script src="Lib/js/angular.min.js"></script>
-        <script src="Lib/js/controllers.js"></script>
 
 </head>
 <body ng-app="myApp" ng-controller="cartCtrl">
@@ -67,7 +66,7 @@ console.log("cartArray length: " + $scope.cartitems.length);
     var n = 0;
     var list ="";
     while(n < $scope.cartitems.length){
-        list += '<div class="col-md-6">' + $scope.cartitems[n] + "</div>"+'<div class="col-md-6"> R ' + $scope.cartprices[n] + "</div>";
+        list += '<div class="col-md-6"> - ' + $scope.cartitems[n] + "</div>"+'<div class="col-md-6"> R ' + $scope.cartprices[n] + "</div>";
         n++;
     }
 
@@ -86,7 +85,7 @@ console.log("cartArray length: " + $scope.cartitems.length);
         <div class="container">
                 <div class="heading">
                        <!-- <img class="heading-img" src="Lib/img/heading_logo.png" alt=""> -->
-                        <h2>Your Order</h2>
+                        <h2>${user}`s Order</h2>
                 </div>
 
                 <div class="row">
