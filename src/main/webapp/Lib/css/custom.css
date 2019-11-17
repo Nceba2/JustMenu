@@ -1,0 +1,10 @@
+/**
+*this is a simmple css code designed to tyle and decorate the .jsp page
+**/
+.billbox{
+    border: 1px solid black;
+    border-radius: 10px;
+    min-height: 100px;
+    margin-top: 15px;
+    padding: 15px;
+}

@@ -1,9 +1,10 @@
 package Controller;
 
-import Model.CartModel;
-import Model.ICartModel;
-import Model.IProductModel;
-import Model.ProductModel;
+import Model.*;
+import com.itextpdf.text.DocumentException;
+import org.json.simple.JSONArray;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,12 +24,16 @@ public class OrderController extends HttpServlet {
 * */
 
     private ICartModel icartModel= new CartModel();
+    private IStatementGenerator statementGenerator;
     private Map m;
-    private String file2;
+    private String file2,pager;
+    private JSONArray orderNames;
+    private JSONArray orderPrices;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         file2 = "src/main/webapp/Lib/data/products.json";
+        pager ="/views/Cart.jsp";
 
         IProductModel productModel = new ProductModel();
         productModel.setProductSet(file2);
@@ -51,7 +56,30 @@ public class OrderController extends HttpServlet {
         System.out.println("\n prices: \n"+icartModel.getCartPrices());
         System.out.println("\n total: \n"+icartModel.getTotalPrice());
 
-        /** The following line can be used to call a .JSP file to provide the view **/
-        request.getRequestDispatcher("/views/Cart.jsp?Testx=test1").forward(request, response);
+        //the following would then be extended to complete the payment on ipay on any other payment platforms
+        //the statement is if order items are ready when user click pay now button
+        //then process payment and return a statement to the user which they can keep
+        if(request.getParameter("OrderItemsNames") !=null && request.getParameter("OrderItemsPrices") !=null){
+
+            try {
+                JSONParser parser = new JSONParser();
+                orderNames = (JSONArray) parser.parse(request.getParameter("OrderItemsNames"));
+                orderPrices = (JSONArray) parser.parse(request.getParameter("OrderItemsPrices"));
+                int totalPrice = Integer.parseInt(request.getParameter("OrderItemsTotal"));
+                statementGenerator = new StatementGenerator();
+
+                pager = "/Lib/data/Nceba_statement.pdf";
+                statementGenerator.setStatement(orderNames,orderPrices,totalPrice);
+                request.getRequestDispatcher(pager).forward(request, response);
+            } catch (DocumentException | ParseException e) {
+                e.printStackTrace();
+            }
+            System.out.println("paid for: " + request.getParameter("OrderItemsNames")+"\n"+"Generating Statemet for user...");
+        }else {
+            System.out.println("failed to generate statement");
+
+            /** The following line can be used to call a .JSP file to provide the view **/
+            request.getRequestDispatcher(pager).forward(request, response);
+        }
     }
 }

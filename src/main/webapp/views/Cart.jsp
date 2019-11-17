@@ -17,6 +17,7 @@
         <link href="Lib/plugin-frameworks/swiper.css" rel="stylesheet">
         <link href="Lib/fonts/ionicons.css" rel="stylesheet">
         <link href="Lib/common/styles.css" rel="stylesheet">
+        <link href="Lib/css/custom.css" rel="stylesheet">
 
         <script src="Lib/js/angular.min.js"></script>
 
@@ -87,18 +88,26 @@ console.log("cartArray length: " + $scope.cartitems.length);
                        <!-- <img class="heading-img" src="Lib/img/heading_logo.png" alt=""> -->
                         <h2>${user}`s Order</h2>
                 </div>
-
+<form method="POST" action="?pay=yes" >
                 <div class="row">
                         <div class="col-md-6">
                         <h4><u>Items</u></h1>
                         <p>
-                        <div class="row" id="CartList">
+                        <div class="row billbox" id="CartList" >
                         </div>
                         </p>
+                        <br/>
+                        <p>
+                        <input type="hidden" name="OrderItemsNames" value="{{cartitems}}" />
+                        <input type="hidden" name="OrderItemsPrices" value="{{cartprices}}" />
+                        <input type="hidden" name="OrderItemsTotal" value="${cartArrayTotalPrice}" />
+                        </p>
+                        <h4>Total: R ${cartArrayTotalPrice}</h4>
+                        <br/>
 
-                        <h4>total: R ${cartArrayTotalPrice}</h4>
+                        <input type="submit" name="doneOrder" value="Pay Now" class="btn-brdr-primary plr-25" /> &nbsp;
                         </div><!-- col-md-6 -->
-
+</form>
                         <div class="col-md-6">
                                 <p class="mb-30">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea
                                         dictumst.Morbi maximus lobortis ipsum, ut blandit augue ullamcorper vitae.

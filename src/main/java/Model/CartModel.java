@@ -44,11 +44,20 @@ public class CartModel implements ICartModel {
             session.setAttribute("cartSessionArray", cartArray);
             session.setAttribute("cartSessionArrayPrices", cartKeys);
             session.setAttribute("cartSessionArrayTotalPrice", totalPrice);
+            session.setAttribute("user",request.getAttribute("user"));
         }catch (Exception e){
             System.out.println(e);
         }
     }
-
+    public void SubtractFromCart(int id){
+        cartArray = (JSONArray) session.getAttribute("cartSessionArray");
+        cartKeys = (JSONArray) session.getAttribute("cartSessionArrayPrices");
+        session.setAttribute("cartSessionArrayTotalPrice",null);
+        //get item by name or id
+        //using cartKeys.remove(id); to remove the item from cart
+        cartKeys.remove(id);
+        cartArray.remove(id);
+    }
     public JSONArray getCart(){
         return (JSONArray) session.getAttribute("cartSessionArray");
     }

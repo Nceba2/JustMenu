@@ -38,6 +38,8 @@ public class OrderProcess_tests {
          JSONObject testJsonArray = new JSONObject(){};
          testJsonArray.put("test","test");
 
+         //due for refactoring with a stub...
+
          request = Mockito.mock(HttpServletRequest.class);
          when(request.getHeader("principal")).thenReturn("abcd");
          when(request.getHeader("authorization")).thenReturn("authtoken");

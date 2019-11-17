@@ -47,10 +47,9 @@
 
                 <ul class="main-menu font-mountainsre" id="main-menu">
                         <li><a href="?pager=index">HOME</a></li>
-                        <li><a href="02_about_us.html">ABOUT US</a></li>
+                        <li><a href="#aboutUs">ABOUT US</a></li>
                         <li><a href="?pager=Cart">Cart</a></li>
-                        <li><a href="04_blog.html">NEWS</a></li>
-                        <li><a href="05_contact.html">CONTACT</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
                 </ul>
 
                 <div class="clearfix"></div>
@@ -214,7 +213,7 @@ app.controller("myCtrl", function($scope) {
 
 </form>
 
-<section class="story-area left-text center-sm-text pos-relative">
+<section class="story-area left-text center-sm-text pos-relative" id="aboutUs">
         <div class="abs-tbl bg-2 w-20 z--1 dplay-md-none"></div>
         <div class="abs-tbr bg-3 w-20 z--1 dplay-md-none"></div>
         <div class="container">
@@ -248,8 +247,8 @@ app.controller("myCtrl", function($scope) {
         </div><!-- container -->
 </section>
 
-
-<footer class="story-area pb-50  pt-70 pos-absolute">
+<section id="#contact">
+<footer class="story-area pb-50  pt-70 pos-absolute" >
         <div class="pos-top triangle-bottom"></div>
         <div class="container-fluid">
                 <a href="index.html"><img src="Lib/img/logo-white.png" alt="Logo"></a>
@@ -282,7 +281,7 @@ app.controller("myCtrl", function($scope) {
 Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Nceba Sobikwa</a>
         </div><!-- container -->
 </footer>
-
+</section>
 <!-- SCIPTS -->
 <script src="Lib/plugin-frameworks/jquery-3.2.1.min.js"></script>
 <script src="Lib/plugin-frameworks/bootstrap.min.js"></script>

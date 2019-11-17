@@ -40,6 +40,7 @@ public class JustMenuControllerTests {
         URL url = new URL("http://localhost:8080/");
         con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
+        con.getRequestProperties();
 
         assertNotEquals(200,con.getResponseCode());
     }
