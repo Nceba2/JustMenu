@@ -35,11 +35,8 @@
                 <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
 
                 <ul class="main-menu font-mountainsre" id="main-menu">
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="02_about_us.html">ABOUT US</a></li>
-                        <li><a href="03_menu.html">SERVICES</a></li>
-                        <li><a href="04_blog.html">NEWS</a></li>
-                        <li><a href="05_contact.html">CONTACT</a></li>
+                        <li><a href="?pager=index"> < Back </a></li>
+                        <li><a href="#contact">CONTACT</a></li>
                 </ul>
 
                 <div class="clearfix"></div>
@@ -74,7 +71,7 @@ console.log("cartArray length: " + $scope.cartitems.length);
         $("#CartList").html(list);
 });
 </script>
-                                <!-- <h5><a href="#" class="btn-primaryc plr-25"><b>SEE TODAYS MENU</b></a></h5> -->
+
                         </div><!-- dplay-tbl-cell -->
                 </div><!-- dplay-tbl -->
         </div><!-- container -->
@@ -120,6 +117,8 @@ console.log("cartArray length: " + $scope.cartitems.length);
         </div><!-- container -->
 </section>
 
+
+<section id="contact" style="padding: 0 0 0 0;">
 <footer class="pb-50  pt-70 pos-relative">
         <div class="pos-top triangle-bottom"></div>
         <div class="container-fluid">
@@ -153,7 +152,7 @@ console.log("cartArray length: " + $scope.cartitems.length);
 Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Nceba Sobikwa</a>
         </div><!-- container -->
 </footer>
-
+</section>
 <!-- SCIPTS -->
 <script src="Lib/plugin-frameworks/jquery-3.2.1.min.js"></script>
 <script src="Lib/plugin-frameworks/bootstrap.min.js"></script>

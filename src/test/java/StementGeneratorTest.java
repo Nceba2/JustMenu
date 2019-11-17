@@ -42,9 +42,11 @@ public class StementGeneratorTest {
     public void PDFWriterTest() throws IOException, DocumentException {
         header = "test";
         message = "hello test";
+        String expect = "PAID\n"+header+"\n"+message;
+
         IPDFWriter pdfWriter = new PDFWriter();
         pdfWriter.doWrite(header, message,"test");
 
-        assertEquals(message,pdfWriter.doRead("test"));
+       assertEquals(expect,pdfWriter.doRead("test"));
     }
 }

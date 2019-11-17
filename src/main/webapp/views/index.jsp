@@ -204,7 +204,7 @@ app.controller("myCtrl", function($scope) {
         </div><!-- container -->
 </section>
 
-<section id="#contact" style="padding: 0 0 0 0;">
+<section id="contact" style="padding: 0 0 0 0;">
 <footer class="story-area pb-50  pt-70 pos-absolute" >
         <div class="pos-top triangle-bottom"></div>
         <div class="container-fluid">
