@@ -17,11 +17,19 @@ public class StatementGenerator implements IStatementGenerator {
             _header = "Nceba Statement \n \n";
             _Message =  "Ordered Products: \n";
             int n = 0;
-            while(n < productNames.size()) {
-                _Message += "- R" + productPrices.get(n) + "\t \t \t"  + productNames.get(n) + "\n";
-                n++;
+            try {
+                if(totalPrice!= 0) {
+                    while (n < productNames.size()) {
+                        _Message += "- R" + productPrices.get(n) + "\t \t \t" + productNames.get(n) + "\n";
+                        n++;
+                    }
+                    _Message += "\n" + "Total Paid:\b R" + String.valueOf(totalPrice);
+                }else {
+                    throw new Exception();
+                }
+            }catch (Exception e){
+                _Message = "Item names or prices are null";
             }
-            _Message += "\n"+"Total Paid:\b R"+String.valueOf(totalPrice);
 
             pdfWriter.doWrite(_header, _Message,"Nceba_statement");
     }

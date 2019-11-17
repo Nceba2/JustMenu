@@ -11,15 +11,13 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 public class StementGeneratorTest {
 
     private JSONArray productNames;
     private JSONArray productPrices;
     private int TotalPrice;
-    private String message,header;
 
     @Before
     public void initialValues() throws ParseException {
@@ -33,20 +31,50 @@ public class StementGeneratorTest {
     public void  StatementCreationTest() throws IOException, DocumentException {
         IStatementGenerator statementGenerator = new StatementGenerator();
         statementGenerator.setStatement(productNames,productPrices,TotalPrice);
-        System.out.println(statementGenerator.getStatement());
 
         assertNotNull(statementGenerator.getStatement());
     }
 
     @Test
-    public void PDFWriterTest() throws IOException, DocumentException {
-        header = "test";
-        message = "hello test";
-        String expect = "PAID\n"+header+"\n"+message;
+    public void  StatementCreation_NullProductNamesTest() throws IOException, DocumentException {
+        String expact = "PAID\nNceba Statement\n \nItem names or prices are null";
+        IStatementGenerator statementGenerator = new StatementGenerator();
+        statementGenerator.setStatement(null,productPrices,TotalPrice);
 
-        IPDFWriter pdfWriter = new PDFWriter();
-        pdfWriter.doWrite(header, message,"test");
+        assertEquals(expact,statementGenerator.getStatement());
+    }
 
-       assertEquals(expect,pdfWriter.doRead("test"));
+    @Test
+    public void  StatementCreation_NullProductPricesTest() throws IOException, DocumentException {
+        String expact = "PAID\nNceba Statement\n \nItem names or prices are null";
+        IStatementGenerator statementGenerator = new StatementGenerator();
+        statementGenerator.setStatement(productNames,null,TotalPrice);
+
+        assertEquals(expact,statementGenerator.getStatement());
+    }
+
+    @Test
+    public void  StatementCreation_NullProductPricesAndNamesTest() throws IOException, DocumentException {
+        String expact = "PAID\nNceba Statement\n \nItem names or prices are null";
+        IStatementGenerator statementGenerator = new StatementGenerator();
+        statementGenerator.setStatement(null,null,TotalPrice);
+
+        assertEquals(expact,statementGenerator.getStatement());
+    }
+    @Test
+    public void  StatementCreation_NullTotalPriceTest() throws IOException, DocumentException {
+        String expact = "PAID\nNceba Statement\n \nItem names or prices are null";
+        IStatementGenerator statementGenerator = new StatementGenerator();
+        statementGenerator.setStatement(productNames,productPrices,0);
+
+        assertEquals(expact,statementGenerator.getStatement());
+    }
+    @Test
+    public void  StatementCreation_NullValuesTest() throws IOException, DocumentException {
+        String expact = "PAID\nNceba Statement\n \nItem names or prices are null";
+        IStatementGenerator statementGenerator = new StatementGenerator();
+        statementGenerator.setStatement(null,null,0);
+
+        assertEquals(expact,statementGenerator.getStatement());
     }
 }

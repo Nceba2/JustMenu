@@ -12,34 +12,62 @@ public class PDFWriter implements IPDFWriter {
 
     @Override
     public void doWrite(String header, String Message, String newFile) throws IOException, DocumentException{
-        Document document = new Document();
-        PdfWriter.getInstance(document, new FileOutputStream("src/main/webapp/Lib/data/"+newFile+".pdf"));
-        Image img = Image.getInstance("src/main/webapp/Lib/img/logo-white.png");
+            Document document = new Document();
+            PdfWriter.getInstance(document, new FileOutputStream("src/main/webapp/Lib/data/"+newFile+".pdf"));
+            Image img = Image.getInstance("src/main/webapp/Lib/img/logo-white.png");
 
-        document.open();
-        Font font = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14, BaseColor.RED);
-        Font font1 = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14, BaseColor.BLACK);
-        Font font2 = FontFactory.getFont(FontFactory.COURIER, 8, BaseColor.BLACK);
+            Font font;
+            Font font1;
+            Font font2;
 
-        Chunk chunk = new Chunk("PAID", font);
-        Chunk chunk1 = new Chunk(header, font1);
-        Chunk chunk2 = new Chunk(Message, font2);
+            Chunk chunk;
+            Chunk chunk1;
+            Chunk chunk2;
 
-        document.addTitle("Statement");
-        document.addAuthor("Made by Giant");
+            document.open();
 
-        document.add(img);
-        document.add(new Paragraph(chunk));
-        document.add(new Paragraph(chunk1));
-        document.add(new Paragraph(chunk2));
+            try{
+                font = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14, BaseColor.RED);
+                font1 = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14, BaseColor.BLACK);
+                font2 = FontFactory.getFont(FontFactory.COURIER, 8, BaseColor.BLACK);
 
-        document.setHtmlStyleClass("body{background: red;}");
-        document.close();
+                chunk = new Chunk("PAID", font);
+                chunk1 = new Chunk(header, font1);
+                chunk2 = new Chunk(Message, font2);
+
+                document.addTitle("Statement");
+                document.addAuthor("Made by Giant");
+
+                document.add(img);
+                document.add(new Paragraph(chunk));
+                document.add(new Paragraph(chunk1));
+                document.add(new Paragraph(chunk2));
+            }catch (Exception e){
+                font = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14, BaseColor.RED);
+                font1 = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14, BaseColor.BLACK);
+                font2 = FontFactory.getFont(FontFactory.COURIER, 8, BaseColor.BLACK);
+
+                chunk = new Chunk("PAID", font);
+                chunk1 = new Chunk("null", font1);
+                chunk2 = new Chunk("null", font2);
+
+                document.add(new Paragraph(chunk));
+                document.add(new Paragraph(chunk1));
+                document.add(new Paragraph(chunk2));
+            }
+
+            document.setHtmlStyleClass("body{background: red;}");
+            document.close();
+
     }
 
     @Override
     public String doRead(String filename) throws IOException {
         PdfReader reader = new PdfReader("src/main/webapp/Lib/data/"+filename+".pdf");
-        return String.valueOf(PdfTextExtractor.getTextFromPage(reader, 1));
+        try {
+            return String.valueOf(PdfTextExtractor.getTextFromPage(reader, 1));
+        }catch (Exception e){
+            return null;
+        }
     }
 }
