@@ -18,14 +18,19 @@ public class PDFWriter implements IPDFWriter {
         String IMAGE = "src/main/webapp/Lib/img/blog-1-1000x400.jpg";
 
         document.open();
-        Font font = FontFactory.getFont(FontFactory.COURIER, 8, BaseColor.BLACK);
-        Chunk chunk = new Chunk(Message, font);
+        Font font = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14, BaseColor.RED);
+        Font font1 = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14, BaseColor.BLACK);
+        Font font2 = FontFactory.getFont(FontFactory.COURIER, 8, BaseColor.BLACK);
 
-        Font font2 = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14, BaseColor.BLACK);
-        Chunk chunk2 = new Chunk(header, font2);
+        Chunk chunk = new Chunk("PAID", font);
+        Chunk chunk1 = new Chunk(header, font1);
+        Chunk chunk2 = new Chunk(Message, font2);
 
-        document.add(new Paragraph(chunk2));
+        document.addTitle("Statement");
         document.add(new Paragraph(chunk));
+        document.add(new Paragraph(chunk1));
+        document.add(new Paragraph(chunk2));
+
         document.setHtmlStyleClass("body{background: red;}");
         document.close();
     }

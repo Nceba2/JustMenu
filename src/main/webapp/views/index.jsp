@@ -17,6 +17,7 @@
         <link href="Lib/plugin-frameworks/swiper.css" rel="stylesheet">
         <link href="Lib/fonts/ionicons.css" rel="stylesheet">
         <link href="Lib/common/styles.css" rel="stylesheet">
+        <link href="Lib/css/custom.css" rel="stylesheet">
 
 <style>
 .footerx {
@@ -64,7 +65,11 @@
                         <div class="dplay-tbl-cell center-text color-white">
 
                                 <h5><b>BEST IN TOWN</b></h5>
-                                <h1 class="mt-30 mb-15" ><u>Kota King</u></h1>
+                                <h1 class="mt-30 mb-15" >
+                                    <!-- <u>Kota Zone</u> -->
+                                    <img class="logoImage" src="Lib/img/logo-white.png" alt="Logo">
+                                </h1>
+
 
 <script>
 var app = angular.module("myApp", []);
@@ -106,7 +111,7 @@ app.controller("myCtrl", function($scope) {
                         <div class="col-md-6 food-menu kotas" ng-repeat="k in kotas">
                                 <div class="sided-90x mb-30 ">
                                         <div class="s-left">
-                                            <img class="br-3" src="Lib/img/menu-1-120x120.jpg" alt="Menu Image">
+                                            <img class="br-3" src="Lib/img/kotas/{{k.image}}" alt="Menu Image">
                                         </div><!--s-left-->
                                         <div class="s-right">
                                                 <h5 class="mb-10"><b>{{k.name}}</b><b class="color-primary float-right">R {{k.price}}</b></h5>
@@ -119,7 +124,7 @@ app.controller("myCtrl", function($scope) {
                         <div class="col-md-6 food-menu drinks"  ng-repeat="d in drinks">
                                 <div class="sided-90x mb-30 ">
                                         <div class="s-left">
-                                            <img class="br-3" src="Lib/img/menu-2-120x120.jpg" alt="Menu Image">
+                                            <img class="br-3" src="Lib/img/kotas/{{d.image}}" alt="Menu Image">
                                         </div><!--s-left-->
                                         <div class="s-right">
                                                 <h5 class="mb-10"><b>{{d.name}}</b><b class="color-primary float-right">R {{d.price}}</b></h5>
@@ -132,7 +137,7 @@ app.controller("myCtrl", function($scope) {
                         <div class="col-md-6 food-menu others"  ng-repeat="o in others">
                                 <div class="sided-90x mb-30 ">
                                         <div class="s-left">
-                                            <img class="br-3" src="Lib/img/menu-3-120x120.jpg" alt="Menu Image">
+                                            <img class="br-3" src="Lib/img/kotas/{{o.image}}" alt="Menu Image">
                                         </div><!--s-left-->
                                         <div class="s-right">
                                                 <h5 class="mb-10"><b>{{o.name}}</b><b class="color-primary float-right">R {{o.price}}</b></h5>
@@ -150,53 +155,6 @@ app.controller("myCtrl", function($scope) {
         </div><!-- container -->
 </section>
 
-<section class="story-area bg-seller color-white pos-relative">
-        <div class="pos-bottom triangle-up"></div>
-        <div class="pos-top triangle-bottom"></div>
-        <div class="container">
-                <div class="heading">
-                        <!-- <img class="heading-img" src="Lib/img/heading_logo.png" alt=""> -->
-                        <h2>Today's Special</h2>
-                </div>
-
-                <div class="row">
-                        <div class="col-lg-3 col-md-4  col-sm-6 ">
-                                <div class="center-text mb-30">
-                                        <div class="ïmg-200x mlr-auto pos-relative">
-                                                <h6 class="ribbon-cont"><div class="ribbon primary"></div><b>OFFER</b></h6>
-                                                <img src="Lib/img/seller-2-200x200.png" alt="">
-                                        </div>
-                                        <h5 class="mt-20">Pizza Margherita</h5>
-                                        <h4 class="mt-5"><b>$11.90</b></h4>
-                                        <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                                </div><!--text-center-->
-                        </div><!-- col-md-3 -->
-
-                        <div class="col-lg-3 col-md-4  col-sm-6 ">
-                                <div class="center-text mb-30">
-                                        <div class="ïmg-200x mlr-auto pos-relative"><img src="Lib/img/seller-2-200x200.png" alt=""></div>
-                                        <h5 class="mt-20">Pizza Margherita</h5>
-                                        <h4 class="mt-5"><b>$11.90</b></h4>
-                                        <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                                </div><!--text-center-->
-                        </div><!-- col-md-3 -->
-
-                        <div class="col-lg-3 col-md-4  col-sm-6 ">
-                                <div class="center-text mb-30">
-                                        <div class="ïmg-200x mlr-auto pos-relative"><img src="Lib/img/seller-2-200x200.png" alt=""></div>
-                                        <h5 class="mt-20">Pizza Margherita</h5>
-                                        <h4 class="mt-5"><b>$11.90</b></h4>
-                                        <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                                </div><!--text-center-->
-                        </div><!-- col-md-3 -->
-
-                </div><!-- row -->
-
-                <!-- <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="#" class="btn-primaryc plr-25"><b>SEE TODAYS MENU</b></a></h6> -->
-        </div><!-- container -->
-</section>
-
-
 <div class="footerx center-sm-text pos-relative">
      <br/>
      <div class="row">
@@ -213,7 +171,7 @@ app.controller("myCtrl", function($scope) {
 
 </form>
 
-<section class="story-area left-text center-sm-text pos-relative" id="aboutUs">
+<section class="story-area" id="aboutUs">
         <div class="abs-tbl bg-2 w-20 z--1 dplay-md-none"></div>
         <div class="abs-tbr bg-3 w-20 z--1 dplay-md-none"></div>
         <div class="container">
@@ -224,30 +182,29 @@ app.controller("myCtrl", function($scope) {
 
                 <div class="row">
                         <div class="col-md-6">
-                                <p class="mb-30">Maecenas fermentum tortor id fringilla molestie. In hac habitasse
-                                        platea dictumst. Morbi maximus
-                                        lobortis ipsum, ut blandit augue ullamcorper vitae.
-                                        Nulla dignissim leo felis, eget cursus elit aliquet ut. Curabitur vel convallis
-                                        massa. Morbi tellus
-                                        tortor, luctus et lacinia non, tincidunt in lacus.
-                                        Vivamus sed ligula imperdiet, feugiat magna vitae, blandit ex. Vestibulum id
-                                        dapibus dolor, ac
-                                        cursus nulla. </p>
+                                <p class="mb-30">
+                                        This is the project made by giants. The concept is clear.. the system is to
+                                        create an ordering system for a kota shop. this shop does not actually exist.
+                                        this system could have easily be created by using Angular, phonegap, IOS or
+                                        android native... but due my practice in java, i chose to use Maven to create a
+                                        war file that can be hosted on a java web server. the core of the data base is
+                                        JSON files. plan was if i were to go live i would encrypt the JSON files and use
+                                        secure certificates to protect the site and its content. or alternately use couchDB.
+                                </p>
                         </div><!-- col-md-6 -->
 
                         <div class="col-md-6">
-                                <p class="mb-30">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea
-                                        dictumst.Morbi maximus lobortis ipsum, ut blandit augue ullamcorper vitae.
-                                        Nulla dignissim leo felis, eget cursus elit aliquet ut. Curabitur vel
-                                        convallismassa. Morbi tellus tortor, luctus et lacinia non, tincidunt in lacus.
-                                        Vivamus sed ligula imperdiet, feugiat magna vitae, blandit ex. Vestibulumidda
-                                        pibus dolor, accursus nulla. </p>
+                                <p class="mb-30">
+                                        the site uses Java at its core. the plan is for the code to keep mutating and the
+                                        approaches to change as i practice, learning more about java and Spring framework.
+
+                                </p>
                         </div><!-- col-md-6 -->
                 </div><!-- row -->
         </div><!-- container -->
 </section>
 
-<section id="#contact">
+<section id="#contact" style="padding: 0 0 0 0;">
 <footer class="story-area pb-50  pt-70 pos-absolute" >
         <div class="pos-top triangle-bottom"></div>
         <div class="container-fluid">

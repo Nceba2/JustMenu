@@ -54,7 +54,7 @@
                         <div class="dplay-tbl-cell center-text color-white">
 
                                 <h5><b>BEST IN TOWN</b></h5>
-                                <h1 class="mt-30 mb-15" ><u>Kota King</u></h1>
+                                <h1 class="mt-30 mb-15" ><u>Kota Khona</u></h1>
 
 <script>
 var app = angular.module("myApp", []);
