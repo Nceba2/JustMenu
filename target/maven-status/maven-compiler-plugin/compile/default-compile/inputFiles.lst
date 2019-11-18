@@ -1,11 +1,13 @@
 /Users/nceba/IdeaProjects/JustMenu/src/main/java/Model/ProductModel.java
 /Users/nceba/IdeaProjects/JustMenu/src/main/java/Model/IProductModel.java
+/Users/nceba/IdeaProjects/JustMenu/src/main/java/Model/ISessionServices.java
 /Users/nceba/IdeaProjects/JustMenu/src/main/java/Model/CartModel.java
 /Users/nceba/IdeaProjects/JustMenu/src/main/java/Model/StatementGenerator.java
 /Users/nceba/IdeaProjects/JustMenu/src/main/java/Controller/OrderController.java
 /Users/nceba/IdeaProjects/JustMenu/src/main/java/Model/IDataModel.java
 /Users/nceba/IdeaProjects/JustMenu/src/main/java/Model/ICartModel.java
 /Users/nceba/IdeaProjects/JustMenu/src/main/java/Controller/JustMenuController.java
+/Users/nceba/IdeaProjects/JustMenu/src/main/java/Model/SessionService.java
 /Users/nceba/IdeaProjects/JustMenu/src/main/java/Model/IPDFWriter.java
 /Users/nceba/IdeaProjects/JustMenu/src/main/java/Model/JsonFileReader.java
 /Users/nceba/IdeaProjects/JustMenu/src/main/java/Model/DataModel.java

@@ -70,7 +70,7 @@ public class OrderController extends HttpServlet {
                 String user = icartModel.getUser();
                 statementGenerator = new StatementGenerator();
 
-                pager = "/Lib/data/"+user+"_statement.pdf";
+                pager = "/Lib/data/PDFs/"+user+"_statement.pdf";
                 statementGenerator.setStatement(orderNames,orderPrices,totalPrice, user);
                 request.getRequestDispatcher(pager).forward(request, response);
             } catch (DocumentException | ParseException e) {

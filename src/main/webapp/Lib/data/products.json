@@ -80,7 +80,7 @@
         "description" : "Mash Potato, Mince, sources",
         "price" : 17,
         "image" : "kota12.jpg",
-        "id" : 5
+        "id" : 4
       },
       {
         "name" : "Chicken bus",
@@ -93,14 +93,15 @@
         "name" : "Godzilla Kota",
         "description" : "2 Burgers, cheese, chips, achar, sources, lattice",
         "price" : 70,
-        "image" : "kota10",
+        "image" : "kota10.jpg",
         "id" : 6
       },
       {
         "name" : "Spicy Godzilla Kota",
-        "description" : "kota8.jpg",
+        "description" : "2 Burgers, cheese, chips, achar, sources, lattice",
         "price" : 100,
-        "image" : ""
+        "image" : "kota8.jpg",
+        "id" : 7
       }
     ],
     "testproducts" : [

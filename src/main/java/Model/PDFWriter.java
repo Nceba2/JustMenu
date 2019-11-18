@@ -13,7 +13,7 @@ public class PDFWriter implements IPDFWriter {
     @Override
     public void doWrite(String header, String Message, String newFile) throws IOException, DocumentException{
             Document document = new Document();
-            PdfWriter.getInstance(document, new FileOutputStream("src/main/webapp/Lib/data/"+newFile+".pdf"));
+            PdfWriter.getInstance(document, new FileOutputStream("src/main/webapp/Lib/data/PDFs/"+newFile+".pdf"));
             Image img = Image.getInstance("src/main/webapp/Lib/img/logo-white.png");
 
             Font font;
@@ -63,7 +63,7 @@ public class PDFWriter implements IPDFWriter {
 
     @Override
     public String doRead(String filename) throws IOException {
-        PdfReader reader = new PdfReader("src/main/webapp/Lib/data/"+filename+".pdf");
+        PdfReader reader = new PdfReader("src/main/webapp/Lib/data/PDFs/"+filename+".pdf");
         try {
             return String.valueOf(PdfTextExtractor.getTextFromPage(reader, 1));
         }catch (Exception e){

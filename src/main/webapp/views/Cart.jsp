@@ -51,7 +51,10 @@
                         <div class="dplay-tbl-cell center-text color-white">
 
                                 <h5><b>BEST IN TOWN</b></h5>
-                                <h1 class="mt-30 mb-15" ><u>Kota Khona</u></h1>
+                                <h1 class="mt-30 mb-15" >
+                                    <!-- <u>Kota Zone</u> -->
+                                    <img class="logoImage" src="Lib/img/logo-white.png" alt="Logo">
+                                </h1>
 
 <script>
 var app = angular.module("myApp", []);
@@ -122,36 +125,36 @@ console.log("cartArray length: " + $scope.cartitems.length);
 <section id="contact" style="padding: 0 0 0 0;">
 <footer class="pb-50  pt-70 pos-relative">
         <div class="pos-top triangle-bottom"></div>
-        <div class="container-fluid">
-                <a href="index.html"><img src="Lib/img/logo-white.png" alt="Logo"></a>
+                <div class="container-fluid">
+                        <a href="index.html"><img src="Lib/img/logo-white.png" alt="Logo"></a>
 
-                <div class="pt-30">
-                        <p class="underline-secondary"><b>Address:</b></p>
-                        <p>481 Creekside Lane Avila Beach, CA 93424 </p>
-                </div>
+                        <div class="pt-30">
+                                <p class="underline-secondary"><b>Address:</b></p>
+                                <p>2410 Swan Rd , Riverlea, Ext 3</p>
+                        </div>
 
-                <div class="pt-30">
-                        <p class="underline-secondary mb-10"><b>Phone:</b></p>
-                        <a href="tel:+53 345 7953 32453 ">+53 345 7953 32453 </a>
-                </div>
+                        <div class="pt-30">
+                                <p class="underline-secondary mb-10"><b>Phone:</b></p>
+                                <a href="tel:+27 81 320 3500 ">+27 81 320 3500</a>
+                        </div>
 
-                <div class="pt-30">
-                        <p class="underline-secondary mb-10"><b>Email:</b></p>
-                        <a href="mailto:yourmail@gmail.com"> yourmail@gmail.com</a>
-                </div>
+                        <div class="pt-30">
+                                <p class="underline-secondary mb-10"><b>Email:</b></p>
+                                <a href="mailto:yourmail@gmail.com"> Ncebsobikwa1@hotmail.com</a>
+                        </div>
 
-                <ul class="icon mt-30">
-                        <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
-                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                        <li><a href="#"><i class="ion-social-dribbble-outline"></i></a></li>
-                        <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
-                        <li><a href="#"><i class="ion-social-vimeo"></i></a></li>
-                </ul>
+                        <ul class="icon mt-30">
+                                <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-dribbble-outline"></i></a></li>
+                                <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+                                <li><a href="#"><i class="ion-social-vimeo"></i></a></li>
+                        </ul>
 
-                <p class="color-light font-9 mt-50 mt-sm-30"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Nceba Sobikwa</a>
-        </div><!-- container -->
+                        <p class="color-light font-9 mt-50 mt-sm-30"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Nceba Sobikwa</a>
+                </div><!-- container -->
 </footer>
 </section>
 <!-- SCIPTS -->
