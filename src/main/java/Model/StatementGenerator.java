@@ -5,16 +5,16 @@ import org.json.simple.JSONArray;
 import java.io.IOException;
 
 public class StatementGenerator implements IStatementGenerator {
-    private String _Message,_header;
+    private String _Message,_header, userID;
 
     IPDFWriter pdfWriter;
 
     @Override
-    public void setStatement(JSONArray productNames, JSONArray productPrices, int totalPrice) throws IOException, DocumentException {
+    public void setStatement(JSONArray productNames, JSONArray productPrices, int totalPrice, String user) throws IOException, DocumentException {
             //set the values an feeback of the statement
             pdfWriter = new PDFWriter();
 
-            _header = "Nceba Statement \n \n";
+            _header = user+" Statement \n \n";
             _Message =  "Ordered Products: \n";
             int n = 0;
             try {
@@ -31,11 +31,12 @@ public class StatementGenerator implements IStatementGenerator {
                 _Message = "Item names or prices are null";
             }
 
-            pdfWriter.doWrite(_header, _Message,"Nceba_statement");
+            pdfWriter.doWrite(_header, _Message,user+"_statement");
+            this.userID = user;
     }
 
     @Override
     public String getStatement() throws IOException {
-        return pdfWriter.doRead("Nceba_statement");
+        return pdfWriter.doRead(userID+"_statement");
     }
 }

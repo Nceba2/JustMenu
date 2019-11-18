@@ -12,7 +12,7 @@ import java.net.URL;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-public class JustMenuControllerTests {
+public class JustMenuController_tests {
 
     private URL url;
     private String file,file2;

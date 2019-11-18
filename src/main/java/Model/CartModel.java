@@ -3,16 +3,15 @@ package Model;
 import org.json.simple.JSONArray;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
 public class CartModel implements ICartModel {
     private JSONArray cartArray,cartKeys;
-    private HttpSession session;
     private int totalPrice = 0;
-    private String file2 = "src/main/webapp/Lib/data/products.json";
+    private String file2 = "src/main/webapp/Lib/data/products.json", user;
+    private ISessionServices sessionService = new SessionService();
 
     public void addToCart(Map m, HttpServletRequest request){
 
@@ -39,36 +38,41 @@ public class CartModel implements ICartModel {
 
                 if(!key.equals("user"))
                     totalPrice = totalPrice + Integer.parseInt(productModel.getProduct("price",String.valueOf(key.charAt(0)),Integer.parseInt(value[0])));
+
+                if(key.equals("user"))
+                    user = String.valueOf(value[0]);
             }
-            session = request.getSession();
-            session.setAttribute("cartSessionArray", cartArray);
-            session.setAttribute("cartSessionArrayPrices", cartKeys);
-            session.setAttribute("cartSessionArrayTotalPrice", totalPrice);
-            session.setAttribute("user",request.getAttribute("user"));
+            sessionService.setSessionCart(request, cartArray, cartKeys, totalPrice, user);
         }catch (Exception e){
             System.out.println(e);
         }
     }
     public void SubtractFromCart(int id){
-        cartArray = (JSONArray) session.getAttribute("cartSessionArray");
-        cartKeys = (JSONArray) session.getAttribute("cartSessionArrayPrices");
-        session.setAttribute("cartSessionArrayTotalPrice",null);
+        cartArray = sessionService.getSessionProductNames();
+        cartKeys = sessionService.getSessionProductPrices();
+
+        //session.setAttribute("cartSessionArrayTotalPrice",null);
         //get item by name or id
         //using cartKeys.remove(id); to remove the item from cart
         cartKeys.remove(id);
         cartArray.remove(id);
     }
     public JSONArray getCart(){
-        return (JSONArray) session.getAttribute("cartSessionArray");
+        return sessionService.getSessionProductNames();
     }
 
     public JSONArray getCartPrices(){
-        return (JSONArray) session.getAttribute("cartSessionArrayPrices");
+        return sessionService.getSessionProductPrices();
     }
 
     public int getTotalPrice(){
         totalPrice = 0;
-        return (int) session.getAttribute("cartSessionArrayTotalPrice");
+        return sessionService.getSessionTotalPrice();
+    }
+
+    public String getUser(){
+        totalPrice = 0;
+        return sessionService.getSessionUser();
     }
 
 }

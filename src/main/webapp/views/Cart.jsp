@@ -98,6 +98,7 @@ console.log("cartArray length: " + $scope.cartitems.length);
                         <input type="hidden" name="OrderItemsNames" value="{{cartitems}}" />
                         <input type="hidden" name="OrderItemsPrices" value="{{cartprices}}" />
                         <input type="hidden" name="OrderItemsTotal" value="${cartArrayTotalPrice}" />
+                        <input type="hidden" name="OrderItemsTotal" value="${cartArrayTotalPrice}" />
                         </p>
                         <h4>Total: R ${cartArrayTotalPrice}</h4>
                         <br/>

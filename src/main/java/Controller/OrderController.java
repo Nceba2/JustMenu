@@ -51,7 +51,7 @@ public class OrderController extends HttpServlet {
         request.setAttribute("cartArray", icartModel.getCart());//product names ordered
         request.setAttribute("cartArrayPrices", icartModel.getCartPrices());//product prices ordered
         request.setAttribute("cartArrayTotalPrice", icartModel.getTotalPrice());//calculate total
-        request.setAttribute("user", request.getParameter("user"));//user ordering items
+        request.setAttribute("user", icartModel.getUser());//user ordering items
 
         System.out.println("\n Cart filled: \n"+icartModel.getCart());
         System.out.println("\n prices: \n"+icartModel.getCartPrices());
@@ -67,10 +67,11 @@ public class OrderController extends HttpServlet {
                 orderNames = (JSONArray) parser.parse(request.getParameter("OrderItemsNames"));
                 orderPrices = (JSONArray) parser.parse(request.getParameter("OrderItemsPrices"));
                 int totalPrice = Integer.parseInt(request.getParameter("OrderItemsTotal"));
+                String user = icartModel.getUser();
                 statementGenerator = new StatementGenerator();
 
-                pager = "/Lib/data/Nceba_statement.pdf";
-                statementGenerator.setStatement(orderNames,orderPrices,totalPrice);
+                pager = "/Lib/data/"+user+"_statement.pdf";
+                statementGenerator.setStatement(orderNames,orderPrices,totalPrice, user);
                 request.getRequestDispatcher(pager).forward(request, response);
             } catch (DocumentException | ParseException e) {
                 e.printStackTrace();

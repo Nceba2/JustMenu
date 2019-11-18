@@ -16,4 +16,6 @@ public interface ICartModel {
     JSONArray getCartPrices();
 
     int getTotalPrice();
+
+    String getUser();
 }
