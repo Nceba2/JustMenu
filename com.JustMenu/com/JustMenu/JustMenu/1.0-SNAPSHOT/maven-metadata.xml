@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.JustMenu</groupId>
+  <artifactId>JustMenu</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20191119.025257</timestamp>
+      <buildNumber>2</buildNumber>
+    </snapshot>
+    <lastUpdated>20191119025257</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>war</extension>
+        <value>1.0-20191119.025257-2</value>
+        <updated>20191119025257</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0-20191119.025257-2</value>
+        <updated>20191119025257</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
