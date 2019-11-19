@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+        <title>Just Menu</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+
+        <!-- Font -->
+        <link href="Just%20Menu_files/css.css" rel="stylesheet">
+        <link rel="stylesheet" href="Just%20Menu_files/beyond_the_mountains-webfont.css" type="text/css">
+
+        <!-- Stylesheets -->
+        <link href="Just%20Menu_files/bootstrap.css" rel="stylesheet">
+        <link href="Just%20Menu_files/swiper.css" rel="stylesheet">
+        <link href="Just%20Menu_files/ionicons.html" rel="stylesheet">
+        <link href="Just%20Menu_files/styles.css" rel="stylesheet">
+
+<style>
+.footerx {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+</style>
+
+        <script src="Just%20Menu_files/angular.js"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="myCtrl" class="ng-scope">
+
+<header>
+        <div class="container">
+                <!-- <a class="logo" href="#"><img src="Lib/img/logo-white.png" alt="Logo"></a> -->
+
+                <div class="right-area">
+                        <h6><a class="plr-20 color-white btn-fill-primary" href="#">ORDER: +34 685 778 8892</a></h6>
+                </div><!-- right-area -->
+
+                <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
+
+                <ul class="main-menu font-mountainsre" id="main-menu">
+                        <li><a href="http://localhost:8080/justmenu/?pager=index">HOME</a></li>
+                        <li><a href="#aboutUs">ABOUT US</a></li>
+                        <li><a href="http://localhost:8080/justmenu/?pager=Cart">Cart</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                </ul>
+
+                <div class="clearfix"></div>
+        </div><!-- container -->
+</header>
+
+
+<section class="bg-1 h-900x main-slider pos-relative">
+        <div class="triangle-up pos-bottom"></div>
+        <div class="container h-100">
+                <div class="dplay-tbl">
+                        <div class="dplay-tbl-cell center-text color-white">
+
+                                <h5><b>BEST IN TOWN</b></h5>
+                                <h1 class="mt-30 mb-15"><u>Kota Zone</u>
+                                <img class="logoImage" src="Just%20Menu_files/logo-white.png" alt="Logo" style="height: 180px;width: 620px;"></h1>
+
+
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+    $scope.kotas = [{"image":"kota1.jpg","price":10,"name":"Regular Kota","description":"Special, chips, achar, sources","id":0},{"image":"kota2","price":10,"name":"Regular part2 Kota","description":"Special, chips, achar, sources, russian","id":1},{"image":"kota3.jpg","price":12,"name":"Regular cheese Kota","description":"Special, chips, achar, sources, veana, cheese","id":2},{"image":"kota7.jpg","price":21,"name":"Burger Bomb Kota","description":"Burger, chips, sources, cheese","id":3},{"image":"kota12.jpg","price":17,"name":"Mince Kota","description":"Mash Potato, Mince, sources","id":5},{"image":"kota9.jpg","price":50,"name":"Chicken bus","description":"Chicken Mayo Salad, chips, achar, cheese","id":5},{"image":"kota10","price":70,"name":"Godzilla Kota","description":"2 Burgers, cheese, chips, achar, sources, lattice","id":6},{"image":"","price":100,"name":"Spicy Godzilla Kota","description":"kota8.jpg"}];
+    $scope.drinks = [{"image":"sprite.png","price":20,"name":"Sprite","description":"can","id":0},{"image":"coke.jpg","price":20,"name":"Coca-Cola","description":"2l bottle","id":1},{"image":"water.jpg","price":10,"name":"Water","description":"1\/2l bottle","id":2}];
+    $scope.others = [{"image":"fries.jpg","price":5,"name":"Small chips","description":"With cheese source, tomato source","id":0},{"image":"fries.jpg","price":10,"name":"lage chips","description":"With cheese source, tomato source","id":1},{"image":"fries.jpg","price":1,"name":"fat cakes","description":"per fat cake","id":2}];
+
+    console.log("kotas :" + $scope.kotas);
+});
+</script>
+                                <!-- <h5><a href="#" class="btn-primaryc plr-25"><b>SEE TODAYS MENU</b></a></h5> -->
+                        </div><!-- dplay-tbl-cell -->
+                </div><!-- dplay-tbl -->
+        </div><!-- container -->
+</section>
+
+<form action="OrderController" method="post" class="ng-pristine ng-valid">
+
+<section>
+        <div class="container">
+                <div class="heading">
+                        <!-- <img class="heading-img" src="Lib/img/heading_logo.png" alt=""> -->
+                        <h2>Our Menu</h2>
+                </div>
+
+                <div class="row">
+                        <div class="col-sm-12">
+                                <ul class="selecton brdr-b-primary mb-70">
+                                        <li><a class="active" href="#" data-select="*"><b>ALL</b></a></li>
+                                        <li><a href="#" data-select="kotas"><b>KOTAS</b></a></li>
+                                        <li><a href="#" data-select="drinks"><b>DRINKS</b></a></li>
+                                        <li><a href="#" data-select="others"><b>OTHERS</b></a></li>
+                                </ul>
+                        </div><!--col-sm-12-->
+                </div><!--row-->
+
+                <div class="row">
+                        <!-- ngRepeat: k in kotas --><div class="col-md-6 food-menu kotas active ng-scope" ng-repeat="k in kotas">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left">
+                                            <img class="br-3" src="Just%20Menu_files/kota1.jpg" alt="Menu Image">
+                                        </div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b class="ng-binding">Regular Kota</b><b class="color-primary float-right ng-binding">R 10</b></h5>
+                                            <input type="checkbox" name="kota0" value="0" style="height: 40px;width: 40px;">
+                                                <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- end ngRepeat: k in kotas --><div class="col-md-6 food-menu kotas active ng-scope" ng-repeat="k in kotas">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left">
+                                            <img class="br-3" src="Just%20Menu_files/kota2.html" alt="Menu Image">
+                                        </div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b class="ng-binding">Regular part2 Kota</b><b class="color-primary float-right ng-binding">R 10</b></h5>
+                                            <input type="checkbox" name="kota1" value="1" style="height: 40px;width: 40px;">
+                                                <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- end ngRepeat: k in kotas --><div class="col-md-6 food-menu kotas active ng-scope" ng-repeat="k in kotas">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left">
+                                            <img class="br-3" src="Just%20Menu_files/kota3.jpg" alt="Menu Image">
+                                        </div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b class="ng-binding">Regular cheese Kota</b><b class="color-primary float-right ng-binding">R 12</b></h5>
+                                            <input type="checkbox" name="kota2" value="2" style="height: 40px;width: 40px;">
+                                                <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- end ngRepeat: k in kotas --><div class="col-md-6 food-menu kotas active ng-scope" ng-repeat="k in kotas">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left">
+                                            <img class="br-3" src="Just%20Menu_files/kota7.jpg" alt="Menu Image">
+                                        </div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b class="ng-binding">Burger Bomb Kota</b><b class="color-primary float-right ng-binding">R 21</b></h5>
+                                            <input type="checkbox" name="kota3" value="3" style="height: 40px;width: 40px;">
+                                                <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- end ngRepeat: k in kotas --><div class="col-md-6 food-menu kotas active ng-scope" ng-repeat="k in kotas">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left">
+                                            <img class="br-3" src="Just%20Menu_files/kota12.jpg" alt="Menu Image">
+                                        </div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b class="ng-binding">Mince Kota</b><b class="color-primary float-right ng-binding">R 17</b></h5>
+                                            <input type="checkbox" name="kota5" value="5" style="height: 40px;width: 40px;">
+                                                <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- end ngRepeat: k in kotas --><div class="col-md-6 food-menu kotas active ng-scope" ng-repeat="k in kotas">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left">
+                                            <img class="br-3" src="Just%20Menu_files/kota9.jpg" alt="Menu Image">
+                                        </div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b class="ng-binding">Chicken bus</b><b class="color-primary float-right ng-binding">R 50</b></h5>
+                                            <input type="checkbox" name="kota5" value="5" style="height: 40px;width: 40px;">
+                                                <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- end ngRepeat: k in kotas --><div class="col-md-6 food-menu kotas active ng-scope" ng-repeat="k in kotas">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left">
+                                            <img class="br-3" src="Just%20Menu_files/kota10.html" alt="Menu Image">
+                                        </div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b class="ng-binding">Godzilla Kota</b><b class="color-primary float-right ng-binding">R 70</b></h5>
+                                            <input type="checkbox" name="kota6" value="6" style="height: 40px;width: 40px;">
+                                                <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- end ngRepeat: k in kotas --><div class="col-md-6 food-menu kotas active ng-scope" ng-repeat="k in kotas">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left">
+                                            <img class="br-3" src="Just%20Menu_files/a.html" alt="Menu Image">
+                                        </div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b class="ng-binding">Spicy Godzilla Kota</b><b class="color-primary float-right ng-binding">R 100</b></h5>
+                                            <input type="checkbox" name="kota" value="" style="height: 40px;width: 40px;">
+                                                <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- end ngRepeat: k in kotas --><!-- food-menu -->
+
+                        <!-- ngRepeat: d in drinks --><div class="col-md-6 food-menu drinks active ng-scope" ng-repeat="d in drinks">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left">
+                                            <img class="br-3" src="Just%20Menu_files/sprite.png" alt="Menu Image">
+                                        </div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b class="ng-binding">Sprite</b><b class="color-primary float-right ng-binding">R 20</b></h5>
+                                            <input type="checkbox" name="drink0" value="0" style="height: 40px;width: 40px;">
+                                                <p class="pr-70">Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- end ngRepeat: d in drinks --><div class="col-md-6 food-menu drinks active ng-scope" ng-repeat="d in drinks">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left">
+                                            <img class="br-3" src="Just%20Menu_files/coke.jpg" alt="Menu Image">
+                                        </div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b class="ng-binding">Coca-Cola</b><b class="color-primary float-right ng-binding">R 20</b></h5>
+                                            <input type="checkbox" name="drink1" value="1" style="height: 40px;width: 40px;">
+                                                <p class="pr-70">Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- end ngRepeat: d in drinks --><div class="col-md-6 food-menu drinks active ng-scope" ng-repeat="d in drinks">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left">
+                                            <img class="br-3" src="Just%20Menu_files/water.jpg" alt="Menu Image">
+                                        </div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b class="ng-binding">Water</b><b class="color-primary float-right ng-binding">R 10</b></h5>
+                                            <input type="checkbox" name="drink2" value="2" style="height: 40px;width: 40px;">
+                                                <p class="pr-70">Proin dictum viverra varius. Etiam vulputate libero dui, at pretium elit elementum quis. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- end ngRepeat: d in drinks --><!-- food-menu -->
+
+                        <!-- ngRepeat: o in others --><div class="col-md-6 food-menu others active ng-scope" ng-repeat="o in others">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left">
+                                            <img class="br-3" src="Just%20Menu_files/fries.jpg" alt="Menu Image">
+                                        </div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b class="ng-binding">Small chips</b><b class="color-primary float-right ng-binding">R 5</b></h5>
+                                            <input type="checkbox" name="other0" value="0" style="height: 40px;width: 40px;">
+                                                <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- end ngRepeat: o in others --><div class="col-md-6 food-menu others active ng-scope" ng-repeat="o in others">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left">
+                                            <img class="br-3" src="Just%20Menu_files/fries.jpg" alt="Menu Image">
+                                        </div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b class="ng-binding">lage chips</b><b class="color-primary float-right ng-binding">R 10</b></h5>
+                                            <input type="checkbox" name="other1" value="1" style="height: 40px;width: 40px;">
+                                                <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- end ngRepeat: o in others --><div class="col-md-6 food-menu others active ng-scope" ng-repeat="o in others">
+                                <div class="sided-90x mb-30 ">
+                                        <div class="s-left">
+                                            <img class="br-3" src="Just%20Menu_files/fries.jpg" alt="Menu Image">
+                                        </div><!--s-left-->
+                                        <div class="s-right">
+                                                <h5 class="mb-10"><b class="ng-binding">fat cakes</b><b class="color-primary float-right ng-binding">R 1</b></h5>
+                                            <input type="checkbox" name="other2" value="2" style="height: 40px;width: 40px;">
+                                                <p class="pr-70">Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. </p>
+                                        </div><!--s-right-->
+                                </div><!-- sided-90x -->
+                        </div><!-- end ngRepeat: o in others --><!-- food-menu -->
+
+
+
+                </div><!-- row -->
+
+                <!-- <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="#" class="btn-primaryc plr-25"><b>SEE TODAYS MENU</b></a></h6> -->
+        </div><!-- container -->
+</section>
+
+<div class="footerx center-sm-text pos-relative">
+     <br>
+     <div class="row">
+          <div class="col-md-6 food-menu others active">
+                <input type="hidden" value="Nceba" name="user" autocomplete="off">
+                <input type="submit" value="Complete Order" class="btn-brdr-primary plr-25">
+          </div>
+           <div class="col-md-6 food-menu others active">
+                <input type="cancel" value="Cancel" class="btn-brdr-primary plr-25">
+          </div>
+     </div>
+     <br>
+</div>
+
+</form>
+
+<section class="story-area" id="aboutUs">
+        <div class="abs-tbl bg-2 w-20 z--1 dplay-md-none"></div>
+        <div class="abs-tbr bg-3 w-20 z--1 dplay-md-none"></div>
+        <div class="container">
+                <div class="heading">
+                       <!-- <img class="heading-img" src="Lib/img/heading_logo.png" alt=""> -->
+                        <h2>Our Story</h2>
+                </div>
+
+                <div class="row">
+                        <div class="col-md-6">
+                                <p class="mb-30">
+                                        This is the project made by giants. The concept is clear.. the system is to
+                                        create an ordering system for a kota shop. this shop does not actually exist.
+                                        this system could have easily be created by using Angular, phonegap, IOS or
+                                        android native... but due my practice in java, i chose to use Maven to create a
+                                        war file that can be hosted on a java web server. the core of the data base is
+                                        JSON files. plan was if i were to go live i would encrypt the JSON files and use
+                                        secure certificates to protect the site and its content. or alternately use couchDB.
+                                </p>
+                        </div><!-- col-md-6 -->
+
+                        <div class="col-md-6">
+                                <p class="mb-30">
+                                        the site uses Java at its core. the plan is for the code to keep mutating and the
+                                        approaches to change as i practice, learning more about java and Spring framework.
+
+                                </p>
+                        </div><!-- col-md-6 -->
+                </div><!-- row -->
+        </div><!-- container -->
+</section>
+
+<section id="#contact" style="padding: 0 0 0 0;">
+<footer class="story-area pb-50  pt-70 pos-absolute">
+        <div class="pos-top triangle-bottom"></div>
+        <div class="container-fluid">
+                <a href="http://localhost:8080/justmenu/index.html"><img src="Just%20Menu_files/logo-white.png" alt="Logo"></a>
+
+                <div class="pt-30">
+                        <p class="underline-secondary"><b>Address:</b></p>
+                        <p>2410 Swan Rd , Riverlea, Ext 3</p>
+                </div>
+
+                <div class="pt-30">
+                        <p class="underline-secondary mb-10"><b>Phone:</b></p>
+                        <a href="tel:+27 81 320 3500">+27 81 320 3500</a>
+                </div>
+
+                <div class="pt-30">
+                        <p class="underline-secondary mb-10"><b>Email:</b></p>
+                        <a href="mailto:yourmail@gmail.com"> Ncebsobikwa1@hotmail.com</a>
+                </div>
+
+                <ul class="icon mt-30">
+                        <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
+                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                        <li><a href="#"><i class="ion-social-dribbble-outline"></i></a></li>
+                        <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+                        <li><a href="#"><i class="ion-social-vimeo"></i></a></li>
+                </ul>
+
+                <p class="color-light font-9 mt-50 mt-sm-30"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright © <script>document.write(new Date().getFullYear());</script>2019 All rights reserved | Nceba Sobikwa
+        </p></div><!-- container -->
+</footer>
+</section>
+<!-- SCIPTS -->
+<script src="Just%20Menu_files/jquery-3.js"></script>
+<script src="Just%20Menu_files/bootstrap.js"></script>
+<script src="Just%20Menu_files/swiper.js"></script>
+<script src="Just%20Menu_files/scripts.js"></script>
+
+
+</body></html>

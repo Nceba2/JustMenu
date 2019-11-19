@@ -112,5 +112,4 @@
             <id>com.JustMenu</id>
             <url>file://${project.basedir}/com.JustMenu</url>
         </repository>
-    </distributionManagement>
 </project>

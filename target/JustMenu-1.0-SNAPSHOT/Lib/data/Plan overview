@@ -1,0 +1,32 @@
+Planned System overview
+========================
+in working systems this file would not be there
+this could be replaced by proper documentations
+and proper ERDs. which i will do.
+
+this file is create to overview the planned system
+as follows:
+
+required
+--------
+the system should have two GUIs for input and output
+- input should have a structure of a Kota(food) menu
+        the menu should be able to add or remove items
+        from the order made by the user.
+- output should have a structure of a bill with totals
+        the bill should have the prices of each items.
+        the bill should have a total calculated from
+        adding all item prices.
+
+on this system check out not implimeted for there is no
+payment system. i would use i-pay for payment.
+
+break down
+----------
+- menu should be displayed
+- menu should have Items[]
+- items should have price
+- system should add/subtract Items[prices] to Total(int) and order[]
+- system should return total(int) and order[]
+- bill should be diplayed
+- bill should have order[] and total(int)

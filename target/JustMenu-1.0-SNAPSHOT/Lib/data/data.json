@@ -1,0 +1,7 @@
+{
+    "url" : "http://localhost:8080/justmenu/",
+    "url_localhost" : "http://localhost:8080/justmenu/",
+    "url_images" : "src/main/webapp/Lib/img/",
+    "url_data" : "src/main/webapp/Lib/data/",
+    "test" : "ok"
+ }

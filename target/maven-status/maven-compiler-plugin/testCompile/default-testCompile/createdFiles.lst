@@ -1,0 +1,6 @@
+ProductModel_tests.class
+PDFWriter_tests.class
+JustMenuController_tests.class
+StementGenerator_tests.class
+FileReader_tests.class
+SessionServices_tests.class
