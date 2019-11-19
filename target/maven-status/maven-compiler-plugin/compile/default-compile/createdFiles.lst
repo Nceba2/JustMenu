@@ -1,3 +1,17 @@
+Model/ProductModel.class
 Model/SessionService.class
+Controller/OrderController.class
 Model/CartModel$2.class
+Model/ICartModel.class
 Model/ISessionServices.class
+Model/CartModel$1.class
+Model/PDFWriter.class
+Model/IDataModel.class
+Model/CartModel.class
+Model/StatementGenerator.class
+Controller/JustMenuController.class
+Model/JsonFileReader.class
+Model/IPDFWriter.class
+Model/DataModel.class
+Model/IStatementGenerator.class
+Model/IProductModel.class
