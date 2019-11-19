@@ -5,20 +5,20 @@
   <version>1.0-SNAPSHOT</version>
   <versioning>
     <snapshot>
-      <timestamp>20191119.182901</timestamp>
-      <buildNumber>6</buildNumber>
+      <timestamp>20191119.201232</timestamp>
+      <buildNumber>9</buildNumber>
     </snapshot>
-    <lastUpdated>20191119182901</lastUpdated>
+    <lastUpdated>20191119201232</lastUpdated>
     <snapshotVersions>
       <snapshotVersion>
         <extension>war</extension>
-        <value>1.0-20191119.182901-6</value>
-        <updated>20191119182901</updated>
+        <value>1.0-20191119.201232-9</value>
+        <updated>20191119201232</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.0-20191119.182901-6</value>
-        <updated>20191119182901</updated>
+        <value>1.0-20191119.201232-9</value>
+        <updated>20191119201232</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>

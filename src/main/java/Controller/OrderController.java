@@ -70,11 +70,15 @@ public class OrderController extends HttpServlet {
                 String user = icartModel.getUser();
                 statementGenerator = new StatementGenerator();
 
-                pager = "/Lib/data/PDFs/"+user+"_statement.pdf";
-                statementGenerator.setStatement(orderNames,orderPrices,totalPrice, user);
+                pager = "/Lib/data/PDFs/" + user + "_statement.pdf";
+                try {
+                    statementGenerator.setStatement(orderNames, orderPrices, totalPrice, user);
+                } catch (DocumentException e) {
+                    e.printStackTrace();
+                }
                 request.getRequestDispatcher(pager).forward(request, response);
-            } catch (DocumentException | ParseException e) {
-                e.printStackTrace();
+            }catch (ParseException f){
+                f.printStackTrace();
             }
             System.out.println("paid for: " + request.getParameter("OrderItemsNames")+"\n"+"Generating Statemet for user...");
         }else {

@@ -90,9 +90,9 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.6.2</version>
-<!--                    <configuration>-->
-<!--                        <release>11</release>-->
-<!--                    </configuration>-->
+                    <configuration>
+                        <release>11</release>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.tomcat.maven</groupId>
@@ -104,6 +104,28 @@
                     </configuration>
                 </plugin>
 
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>build-info</goal>
+                            </goals>
+                            <configuration>
+                                <additionalProperties>
+                                    <encoding.source>${project.build.sourceEncoding}</encoding.source>
+                                    <!--suppress UnresolvedMavenProperty -->
+                                    <encoding.reporting>${project.reporting.outputEncoding}</encoding.reporting>
+                                    <!--suppress UnresolvedMavenProperty -->
+                                    <java.source>${maven.compiler.source}</java.source>
+                                    <!--suppress UnresolvedMavenProperty -->
+                                    <java.target>${maven.compiler.target}</java.target>
+                                </additionalProperties>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
@@ -112,5 +134,9 @@
             <id>com.JustMenu</id>
             <url>file://${project.basedir}/com.JustMenu</url>
         </repository>
+<!--        <repository>-->
+<!--            <id>justmenu</id>-->
+<!--            <url>https://dashboard.heroku.com/apps/justmenu1</url>-->
+<!--        </repository>-->
     </distributionManagement>
 </project>
